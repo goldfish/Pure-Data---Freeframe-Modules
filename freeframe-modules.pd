@@ -423,6 +423,58 @@ http://www.petewarden.com;
 #X connect 12 0 10 0;
 #X coords 0 -1 1 1 210 135 2 50 50;
 #X restore 216 367 pd HalfToneVFX;
+#N canvas 645 332 430 385 SlideVFX 0;
+#X obj 12 6 inlet;
+#X obj 12 279 outlet;
+#X obj 67 82 vsl 30 80 0 1 0 0 empty empty scale -2 -9 0 8 -262144
+-1 -1 4503 1;
+#X obj 208 148 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X obj 117 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.53 256;
+#X obj 67 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.57 256;
+#X floatatom 67 167 5 0 0 0 - - -;
+#X floatatom 117 167 5 0 0 0 - - -;
+#X obj 208 78 tgl 15 0 empty empty horizontal 17 7 0 8 -262144 -1 -1
+0 1;
+#X obj 208 98 tgl 15 0 empty empty mirror 17 7 0 8 -262144 -1 -1 0
+1;
+#X obj 117 82 vsl 30 80 0 1 0 0 empty empty speed1 0 -9 0 8 -262144
+-1 -1 4187 1;
+#X msg 281 193 0;
+#X obj 12 241 pix_freeframe ./plugins/SlideVFX;
+#X obj 167 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.47 256;
+#X floatatom 167 167 5 0 0 0 - - -;
+#X obj 167 82 vsl 30 80 0 1 0 0 empty empty speed2 0 -9 0 8 -262144
+-1 -1 3713 1;
+#X text 55 52 SlideVFX;
+#X text 69 277 The image is broken into segments which are slid independantly
+of each other.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin Slide. http://www.petewarden.com
+;
+#X connect 0 0 12 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 0 11 0;
+#X connect 3 0 13 0;
+#X connect 4 0 10 0;
+#X connect 5 0 2 0;
+#X connect 6 0 12 4;
+#X connect 7 0 12 5;
+#X connect 8 0 12 1;
+#X connect 9 0 12 2;
+#X connect 10 0 7 0;
+#X connect 11 0 8 0;
+#X connect 11 0 9 0;
+#X connect 12 0 1 0;
+#X connect 13 0 15 0;
+#X connect 14 0 12 6;
+#X connect 15 0 14 0;
+#X coords 0 -1 1 1 240 135 2 50 50;
+#X restore 487 76 pd SlideVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
