@@ -1,4 +1,4 @@
-#N canvas 649 41 615 676 10;
+#N canvas 430 25 844 682 10;
 #X obj -2 5 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #N canvas 227 244 476 345 gemwin 0;
@@ -70,10 +70,10 @@
 #X connect 6 0 7 2;
 #X connect 7 0 3 0;
 #X coords 0 -1 1 1 85 135 2 50 50;
-#X restore 0 70 pd radialblurVFX;
-#X obj 1 629 pix_texture;
-#X obj 1 604 r to-output;
-#X obj 1 655 square 4 3;
+#X restore -2 76 pd radialblurVFX;
+#X obj 751 629 pix_texture;
+#X obj 751 604 r to-output;
+#X obj 751 655 square 4 3;
 #N canvas 367 266 437 372 BloomVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 1 empty empty radius -2 -9 0 8 -262144
@@ -144,7 +144,7 @@ sources a halo.;
 #X connect 21 0 13 0;
 #X connect 23 0 2 0;
 #X coords 0 -1 1 1 295 135 2 50 50;
-#X restore 251 222 pd BloomVFX;
+#X restore 249 222 pd BloomVFX;
 #N canvas 762 358 450 356 BackLightVFX 0;
 #X obj -30 8 inlet;
 #X obj 55 122 vsl 30 80 0 1 0 0 empty empty scale -2 -9 0 8 -262144
@@ -187,7 +187,7 @@ http://www.petewarden.com;
 #X connect 13 0 8 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 150 135 2 50 90;
-#X restore 90 70 pd BackLightVFX;
+#X restore 88 76 pd BackLightVFX;
 #N canvas 367 266 437 372 ChromiumVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty edge_1 -2 -9 0 8 -262144
@@ -248,7 +248,7 @@ of the same name.;
 #X connect 17 0 10 0;
 #X connect 19 0 2 0;
 #X coords 0 -1 1 1 245 135 2 50 50;
-#X restore 0 222 pd ChromiumVFX;
+#X restore -2 222 pd ChromiumVFX;
 #N canvas 304 301 437 372 HalfToneVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty dot_size -2 -9 0 8 -262144
@@ -297,7 +297,7 @@ of the same name.;
 #X connect 14 0 8 0;
 #X connect 18 0 2 0;
 #X coords 0 -1 1 1 195 135 2 50 50;
-#X restore 250 70 pd HalfToneVFX;
+#X restore 248 76 pd HalfToneVFX;
 #N canvas 517 345 437 372 DirectionalBlurVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -322,10 +322,10 @@ http://www.petewarden.com;
 #X connect 6 0 7 0;
 #X connect 7 0 4 0;
 #X coords 0 -1 1 1 125 135 2 50 50;
-#X restore 450 70 pd DirectionalBlurVFX;
-#X obj 2 476 cnv 15 500 120 empty empty empty 20 12 0 14 -233017 -66577
+#X restore 448 76 pd DirectionalBlurVFX;
+#X obj 2 526 cnv 15 500 120 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 512 576 s to-output;
+#X obj 1 652 s to-output;
 #N canvas 517 511 437 206 BurnVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 79 outlet;
@@ -337,7 +337,7 @@ http://www.petewarden.com;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X coords 0 0 1 1 125 135 0;
-#X restore 108 484 pd BurnVFX;
+#X restore 108 534 pd BurnVFX;
 #N canvas 517 527 437 190 ExclusionVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 79 outlet;
@@ -348,7 +348,58 @@ http://www.petewarden.com;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X coords 0 0 1 1 125 135 0;
-#X restore 8 484 pd ExclusionVFX;
+#X restore 8 534 pd ExclusionVFX;
+#N canvas 645 345 437 372 DirectionalBlurVFX 0;
+#X obj 12 6 inlet;
+#X obj 12 279 outlet;
+#X obj 67 82 vsl 30 80 0.01 1 1 0 empty empty distort -2 -9 0 8 -262144
+-1 -1 3074 1;
+#X obj 117 82 vsl 30 80 0 1 0 0 empty empty radius -2 -9 0 8 -262144
+-1 -1 7900 1;
+#X obj 12 241 pix_freeframe ./plugins/FishEyeVFX;
+#X obj 167 82 vsl 30 80 0 1 0 0 empty empty x -2 -9 0 8 -262144 -1
+-1 3950 1;
+#X obj 217 82 vsl 30 80 0 1 0 0 empty empty y -2 -9 0 8 -262144 -1
+-1 3950 1;
+#X text 69 277 This gives the effect of a wide angle \, fish eye lens.
+Similar to a peep hole.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin FishEye. http://www.petewarden.com
+;
+#X text 55 52 FishEyeVFX;
+#X obj 189 53 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X obj 167 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.5 256;
+#X obj 217 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.5 256;
+#X obj 117 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 67 23 nbx 3 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.06 256;
+#X floatatom 67 167 5 0 0 0 - - -;
+#X floatatom 117 167 5 0 0 0 - - -;
+#X floatatom 167 167 5 0 0 0 - - -;
+#X floatatom 217 167 5 0 0 0 - - -;
+#X connect 0 0 4 0;
+#X connect 2 0 4 1;
+#X connect 2 0 15 0;
+#X connect 3 0 4 2;
+#X connect 3 0 16 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 3;
+#X connect 5 0 17 0;
+#X connect 6 0 4 4;
+#X connect 6 0 18 0;
+#X connect 10 0 12 0;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 13 0 3 0;
+#X connect 14 0 2 0;
+#X coords 0 -1 1 1 210 135 2 50 50;
+#X restore -2 367 pd DirectionalBlurVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
