@@ -144,7 +144,7 @@ sources a halo.;
 #X connect 21 0 13 0;
 #X connect 23 0 2 0;
 #X coords 0 -1 1 1 295 135 2 50 50;
-#X restore 249 104 pd BloomVFX;
+#X restore 255 256 pd BloomVFX;
 #X obj 100 405 s to-output;
 #N canvas 762 358 450 356 BackLightVFX 0;
 #X obj -30 8 inlet;
@@ -250,6 +250,80 @@ of the same name.;
 #X connect 19 0 2 0;
 #X coords 0 -1 1 1 245 135 2 50 50;
 #X restore 4 256 pd ChromiumVFX;
+#N canvas 304 301 437 372 HalfToneVFX 0;
+#X obj 12 6 inlet;
+#X obj 57 83 vsl 30 80 0 1 0 0 empty empty dot_size -2 -9 0 8 -262144
+-1 -1 316 1;
+#X obj 12 279 outlet;
+#X floatatom 57 168 5 0 0 0 - - -;
+#X obj 107 83 vsl 30 80 0 1 0 0 empty empty style -2 -9 0 8 -262144
+-1 -1 7900 1;
+#X floatatom 107 168 5 0 0 0 - - -;
+#X obj 157 83 vsl 30 80 0 359 0 0 empty empty angle -2 -9 0 8 -262144
+-1 -1 11 1;
+#X floatatom 157 168 5 0 0 0 - - -;
+#X obj 207 83 vsl 30 80 0 1 0 0 empty empty smooth -2 -9 0 8 -262144
+-1 -1 6715 1;
+#X floatatom 207 168 5 0 0 0 - - -;
+#X obj 173 52 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X obj 57 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.04 256;
+#X obj 107 23 nbx 4 14 1 4 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 157 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.51 256;
+#X obj 207 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.85 256;
+#X text 69 277 This effect alters the colours in the image to give
+it an other worldly look. It's inspired by the free photoshop filter
+of the same name.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin Chromium. http://www.petewarden.com
+;
+#X text 53 50 PosterizeVFX;
+#X obj 12 241 pix_freeframe ./plugins/PosterizeVFX;
+#X connect 0 0 18 0;
+#X connect 1 0 3 0;
+#X connect 3 0 18 1;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 10 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 1 0;
+#X connect 12 0 4 0;
+#X connect 13 0 6 0;
+#X connect 14 0 8 0;
+#X connect 18 0 2 0;
+#X coords 0 -1 1 1 195 135 2 50 50;
+#X restore 254 104 pd HalfToneVFX;
+#N canvas 517 345 437 372 DirectionalBlurVFX 0;
+#X obj 12 6 inlet;
+#X obj 12 279 outlet;
+#X obj 12 241 pix_freeframe ./plugins/DirectionalBlurVFX;
+#X obj 67 82 vsl 30 80 0 2 0 0 empty empty radius -2 -9 0 8 -262144
+-1 -1 0 1;
+#X obj 117 82 vsl 30 80 0 1 0 0 empty empty angle -2 -9 0 8 -262144
+-1 -1 0 1;
+#X obj 94 211 * 360;
+#X floatatom 117 167 5 0 359 0 - - -;
+#X obj 131 211 / 360;
+#X text 54 50 DirectionalBlurVFX;
+#X text 69 277 The input image is blurred in a single direction.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin DirectionalBlur.
+http://www.petewarden.com;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 2;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X coords 0 -1 1 1 125 135 2 50 50;
+#X restore 454 104 pd DirectionalBlurVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
