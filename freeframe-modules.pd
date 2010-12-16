@@ -28,7 +28,6 @@
 #X text 129 15 enable;
 #N canvas 311 386 346 237 webcam-src 0;
 #X obj 12 132 pix_video;
-#X msg 89 86 device 2;
 #X msg 97 107 driver 0;
 #X obj 12 72 gemhead 10;
 #X obj 12 155 pix_rgba;
@@ -41,15 +40,16 @@
 0;
 #X text 212 35 Webcam Input;
 #X obj 12 102 alpha;
-#X connect 0 0 4 0;
+#X msg 89 86 device 0;
+#X connect 0 0 3 0;
 #X connect 1 0 0 0;
-#X connect 2 0 0 0;
-#X connect 3 0 11 0;
-#X connect 4 0 8 0;
-#X connect 5 0 3 0;
-#X connect 6 0 1 0;
-#X connect 6 0 2 0;
-#X connect 7 0 5 0;
+#X connect 2 0 10 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 11 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 0;
+#X connect 10 0 0 0;
 #X connect 11 0 0 0;
 #X restore 112 36 pd webcam-src;
 #N canvas 94 307 450 314 radialblurVFX 0;
@@ -249,55 +249,6 @@ of the same name.;
 #X connect 19 0 2 0;
 #X coords 0 -1 1 1 245 135 2 50 50;
 #X restore -2 222 pd ChromiumVFX;
-#N canvas 304 301 437 372 HalfToneVFX 0;
-#X obj 12 6 inlet;
-#X obj 57 83 vsl 30 80 0 1 0 0 empty empty dot_size -2 -9 0 8 -262144
--1 -1 316 1;
-#X obj 12 279 outlet;
-#X floatatom 57 168 5 0 0 0 - - -;
-#X obj 107 83 vsl 30 80 0 1 0 0 empty empty style -2 -9 0 8 -262144
--1 -1 7900 1;
-#X floatatom 107 168 5 0 0 0 - - -;
-#X obj 157 83 vsl 30 80 0 359 0 0 empty empty angle -2 -9 0 8 -262144
--1 -1 11 1;
-#X floatatom 157 168 5 0 0 0 - - -;
-#X obj 207 83 vsl 30 80 0 1 0 0 empty empty smooth -2 -9 0 8 -262144
--1 -1 6715 1;
-#X floatatom 207 168 5 0 0 0 - - -;
-#X obj 173 52 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
--1 -1;
-#X obj 57 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
--1 0.04 256;
-#X obj 107 23 nbx 4 14 1 4 0 1 empty empty empty 0 -8 0 10 -262144
--1 -1 1 256;
-#X obj 157 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
--1 -1 0.51 256;
-#X obj 207 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
--1 -1 0.85 256;
-#X text 69 277 This effect alters the colours in the image to give
-it an other worldly look. It's inspired by the free photoshop filter
-of the same name.;
-#X text 14 334 Uses the Pete's Plugins freeframe plugin Chromium. http://www.petewarden.com
-;
-#X text 53 50 PosterizeVFX;
-#X obj 12 241 pix_freeframe ./plugins/PosterizeVFX;
-#X connect 0 0 18 0;
-#X connect 1 0 3 0;
-#X connect 3 0 18 1;
-#X connect 4 0 5 0;
-#X connect 6 0 7 0;
-#X connect 8 0 9 0;
-#X connect 10 0 11 0;
-#X connect 10 0 12 0;
-#X connect 10 0 13 0;
-#X connect 10 0 14 0;
-#X connect 11 0 1 0;
-#X connect 12 0 4 0;
-#X connect 13 0 6 0;
-#X connect 14 0 8 0;
-#X connect 18 0 2 0;
-#X coords 0 -1 1 1 195 135 2 50 50;
-#X restore 248 76 pd HalfToneVFX;
 #N canvas 517 345 437 372 DirectionalBlurVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -322,7 +273,7 @@ http://www.petewarden.com;
 #X connect 6 0 7 0;
 #X connect 7 0 4 0;
 #X coords 0 -1 1 1 125 135 2 50 50;
-#X restore 448 76 pd DirectionalBlurVFX;
+#X restore 358 76 pd DirectionalBlurVFX;
 #X obj 2 526 cnv 15 500 120 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 1 652 s to-output;
@@ -349,7 +300,7 @@ http://www.petewarden.com;
 #X connect 2 0 1 0;
 #X coords 0 0 1 1 125 135 0;
 #X restore 8 534 pd ExclusionVFX;
-#N canvas 645 345 437 372 DirectionalBlurVFX 0;
+#N canvas 645 345 437 372 FishEyeVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
 #X obj 67 82 vsl 30 80 0.01 1 1 0 empty empty distort -2 -9 0 8 -262144
@@ -399,7 +350,31 @@ Similar to a peep hole.;
 #X connect 13 0 3 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 210 135 2 50 50;
-#X restore -2 367 pd DirectionalBlurVFX;
+#X restore -2 367 pd FishEyeVFX;
+#N canvas 650 299 437 372 PosterizeVFX 0;
+#X obj 12 6 inlet;
+#X obj 57 83 vsl 30 80 0 1 0 0 empty empty colours -2 -9 0 8 -262144
+-1 -1 700 1;
+#X obj 12 279 outlet;
+#X floatatom 57 168 5 0 0 0 - - -;
+#X obj 93 85 bng 15 250 50 0 empty empty default 17 7 0 8 -262144 -1
+-1;
+#X obj 57 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.04 256;
+#X text 53 50 PosterizeVFX;
+#X obj 12 241 pix_freeframe ./plugins/PosterizeVFX;
+#X text 69 277 This effect reduces the number of colours available
+to the image.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin Posterize.
+http://www.petewarden.com;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 3 0 7 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 7 0 2 0;
+#X coords 0 -1 1 1 105 135 2 50 50;
+#X restore 248 76 pd PosterizeVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
