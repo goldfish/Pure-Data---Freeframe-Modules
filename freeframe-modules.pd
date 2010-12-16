@@ -1,0 +1,149 @@
+#N canvas 649 41 615 621 10;
+#X obj -2 5 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+0;
+#N canvas 227 244 476 345 gemwin 0;
+#X obj 82 176 gemwin;
+#X obj 7 89 outlet;
+#X obj 7 10 inlet;
+#X msg 7 70 set destroy;
+#X msg 412 112 destroy;
+#X msg 96 71 set create;
+#X obj 7 41 route create;
+#X msg 72 112 title goldfish \, dimen 640 360 \, lighting 0 \, create
+\, 1;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 3 0;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 6 1 4 0;
+#X connect 7 0 0 0;
+#X restore 3 44 pd gemwin;
+#X msg 3 22 create;
+#X text -1 1 Create window:;
+#X obj 112 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 129 15 enable;
+#N canvas 311 386 346 237 webcam-src 0;
+#X obj 12 132 pix_video;
+#X msg 89 86 device 2;
+#X msg 97 107 driver 0;
+#X obj 12 72 gemhead 10;
+#X obj 12 155 pix_rgba;
+#X obj 12 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 89 63 loadbang;
+#X obj 12 30 inlet;
+#X obj 12 178 outlet;
+#X obj 204 35 cnv 15 90 20 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 212 35 Webcam Input;
+#X obj 12 102 alpha;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 11 0;
+#X connect 4 0 8 0;
+#X connect 5 0 3 0;
+#X connect 6 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 5 0;
+#X connect 11 0 0 0;
+#X restore 112 36 pd webcam-src;
+#N canvas 94 307 450 314 radialblurVFX 0;
+#X obj 10 8 inlet;
+#X obj 10 211 pix_freeframe /home/goldfish/pd-externals/hacks/RadialBlurVFX
+;
+#X obj 55 82 vsl 30 80 0 1 0 0 empty empty scale 0 -9 0 8 -262144 -1
+-1 0 1;
+#X obj 98 82 vsl 30 80 0 1 0 0 empty empty quality -8 -9 0 8 -262144
+-1 -1 0 1;
+#X obj 10 249 outlet;
+#X text 51 49 RadialBlurVFX;
+#X floatatom 55 167 5 0 0 0 - - -;
+#X floatatom 98 167 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 6 0 1 1;
+#X connect 7 0 1 2;
+#X coords 0 -1 1 1 85 135 2 50 50;
+#X restore 4 104 pd radialblurVFX;
+#X obj 8 561 pix_texture;
+#X obj 8 536 r to-output;
+#X obj 8 587 square 4 3;
+#N canvas 649 368 450 314 BloomVFX 0;
+#X obj 12 3 inlet;
+#X obj 57 83 vsl 30 80 0 1 0 1 empty empty radius -2 -9 0 8 -262144
+-1 -1 2686 1;
+#X obj 12 279 outlet;
+#X floatatom 57 168 5 0 0 0 - - -;
+#X obj 12 241 pix_freeframe /home/goldfish/pd-externals/hacks/BloomVFX
+;
+#X text 53 50 BloomVFX;
+#X obj 107 83 vsl 30 80 1 4 0 1 empty empty passes -2 -9 0 8 -262144
+-1 -1 5267 1;
+#X floatatom 107 168 5 0 0 0 - - -;
+#X obj 157 83 vsl 30 80 0 1 0 1 empty empty floor -2 -9 0 8 -262144
+-1 -1 4898 1;
+#X floatatom 157 168 5 0 0 0 - - -;
+#X obj 207 83 vsl 30 80 0 1 0 1 empty empty ceiling -2 -9 0 8 -262144
+-1 -1 6478 1;
+#X floatatom 207 168 5 0 0 0 - - -;
+#X obj 257 83 vsl 30 80 0 1 0 1 empty empty aspect -2 -9 0 8 -262144
+-1 -1 2686 1;
+#X floatatom 257 168 5 0 0 0 - - -;
+#X obj 307 83 vsl 30 80 0 1 0 1 empty empty boost -2 -9 0 8 -262144
+-1 -1 1027 1;
+#X floatatom 307 168 5 0 0 0 - - -;
+#X obj 269 52 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X obj 57 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.34 256;
+#X obj 107 23 nbx 1 14 1 4 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 3 256;
+#X obj 157 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.62 256;
+#X obj 207 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.82 256;
+#X obj 257 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.34 256;
+#X obj 307 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.13 256;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 1;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 2;
+#X connect 8 0 9 0;
+#X connect 9 0 4 3;
+#X connect 10 0 11 0;
+#X connect 11 0 4 4;
+#X connect 12 0 13 0;
+#X connect 13 0 4 5;
+#X connect 14 0 15 0;
+#X connect 15 0 4 6;
+#X connect 16 0 17 0;
+#X connect 16 0 18 0;
+#X connect 16 0 19 0;
+#X connect 16 0 20 0;
+#X connect 16 0 21 0;
+#X connect 16 0 22 0;
+#X connect 17 0 1 0;
+#X connect 18 0 6 0;
+#X connect 19 0 8 0;
+#X connect 20 0 10 0;
+#X connect 21 0 12 0;
+#X connect 22 0 14 0;
+#X coords 0 -1 1 1 295 135 2 50 50;
+#X restore 104 104 pd BloomVFX;
+#X obj 100 265 s to-output;
+#X connect 1 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
