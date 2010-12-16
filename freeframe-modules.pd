@@ -23,7 +23,7 @@
 #X restore 3 44 pd gemwin;
 #X msg 3 22 create;
 #X text -1 1 Create window:;
-#X obj 112 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 112 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 129 15 enable;
 #N canvas 311 386 346 237 webcam-src 0;
@@ -32,7 +32,7 @@
 #X msg 97 107 driver 0;
 #X obj 12 72 gemhead 10;
 #X obj 12 155 pix_rgba;
-#X obj 12 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 12 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 89 63 loadbang;
 #X obj 12 30 inlet;
@@ -75,8 +75,8 @@
 #X obj 8 561 pix_texture;
 #X obj 8 536 r to-output;
 #X obj 8 587 square 4 3;
-#N canvas 649 368 450 314 BloomVFX 0;
-#X obj 12 3 inlet;
+#N canvas 732 256 437 372 BloomVFX 0;
+#X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 1 empty empty radius -2 -9 0 8 -262144
 -1 -1 2686 1;
 #X obj 12 279 outlet;
@@ -113,6 +113,12 @@
 -1 -1 0.34 256;
 #X obj 307 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 0.13 256;
+#X text 69 277 This effect tries to simulate the photographic problem
+of 'blooming' \, where areas of a picture exposed to very strong light
+bleed into neighbouring areas \, brightening them and giving light
+sources a halo.;
+#X text 14 334 Uses the Pete's Plugins freeframe plug in Bloom. http://www.petewarden.com
+;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 3 0 4 1;
@@ -140,10 +146,55 @@
 #X connect 21 0 12 0;
 #X connect 22 0 14 0;
 #X coords 0 -1 1 1 295 135 2 50 50;
-#X restore 104 104 pd BloomVFX;
-#X obj 100 265 s to-output;
+#X restore 249 104 pd BloomVFX;
+#X obj 100 405 s to-output;
+#N canvas 762 358 450 356 BackLightVFX 0;
+#X obj -30 8 inlet;
+#X obj 55 122 vsl 30 80 0 1 0 0 empty empty scale -2 -9 0 8 -262144
+-1 -1 2370 1;
+#X obj -30 289 outlet;
+#X floatatom 55 207 5 0 0 0 - - -;
+#X obj -30 251 pix_freeframe /home/goldfish/pd-externals/hacks/BackLightVFX
+;
+#X text 51 89 BackLightVFX;
+#X text 14 1 This effect draws a line away from the center of the image
+from each pixel. The brighter the pixel \, the longer the line is.
+;
+#X obj 105 122 vsl 30 80 0 1 0 0 empty empty floor -2 -9 0 8 -262144
+-1 -1 2291 1;
+#X floatatom 105 207 5 0 0 0 - - -;
+#X obj 155 122 vsl 30 80 0 1 0 0 empty empty ceiling -2 -9 0 8 -262144
+-1 -1 5767 1;
+#X floatatom 155 207 5 0 0 0 - - -;
+#X text -32 306 Uses the Pete's Plugins freeframe plug in BackLight.
+http://www.petewarden.com;
+#X obj 131 92 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X obj 55 64 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.3 256;
+#X obj 105 64 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.29 256;
+#X obj 155 64 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.73 256;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 1;
+#X connect 4 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 2;
+#X connect 9 0 10 0;
+#X connect 10 0 4 3;
+#X connect 12 0 15 0;
+#X connect 12 0 14 0;
+#X connect 12 0 13 0;
+#X connect 13 0 1 0;
+#X connect 14 0 7 0;
+#X connect 15 0 9 0;
+#X coords 0 -1 1 1 150 135 2 50 90;
+#X restore 94 104 pd BackLightVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
+#X connect 6 0 13 0;
 #X connect 8 0 10 0;
 #X connect 9 0 8 0;
