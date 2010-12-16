@@ -1,4 +1,4 @@
-#N canvas 649 41 615 621 10;
+#N canvas 649 41 615 676 10;
 #X obj -2 5 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #N canvas 227 244 476 345 gemwin 0;
@@ -70,10 +70,10 @@
 #X connect 6 0 7 2;
 #X connect 7 0 3 0;
 #X coords 0 -1 1 1 85 135 2 50 50;
-#X restore 4 104 pd radialblurVFX;
-#X obj 8 561 pix_texture;
-#X obj 8 536 r to-output;
-#X obj 8 587 square 4 3;
+#X restore 0 70 pd radialblurVFX;
+#X obj 1 629 pix_texture;
+#X obj 1 604 r to-output;
+#X obj 1 655 square 4 3;
 #N canvas 367 266 437 372 BloomVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 1 empty empty radius -2 -9 0 8 -262144
@@ -144,8 +144,7 @@ sources a halo.;
 #X connect 21 0 13 0;
 #X connect 23 0 2 0;
 #X coords 0 -1 1 1 295 135 2 50 50;
-#X restore 255 256 pd BloomVFX;
-#X obj 100 405 s to-output;
+#X restore 251 222 pd BloomVFX;
 #N canvas 762 358 450 356 BackLightVFX 0;
 #X obj -30 8 inlet;
 #X obj 55 122 vsl 30 80 0 1 0 0 empty empty scale -2 -9 0 8 -262144
@@ -188,7 +187,7 @@ http://www.petewarden.com;
 #X connect 13 0 8 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 150 135 2 50 90;
-#X restore 94 104 pd BackLightVFX;
+#X restore 90 70 pd BackLightVFX;
 #N canvas 367 266 437 372 ChromiumVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty edge_1 -2 -9 0 8 -262144
@@ -249,7 +248,7 @@ of the same name.;
 #X connect 17 0 10 0;
 #X connect 19 0 2 0;
 #X coords 0 -1 1 1 245 135 2 50 50;
-#X restore 4 256 pd ChromiumVFX;
+#X restore 0 222 pd ChromiumVFX;
 #N canvas 304 301 437 372 HalfToneVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty dot_size -2 -9 0 8 -262144
@@ -298,7 +297,7 @@ of the same name.;
 #X connect 14 0 8 0;
 #X connect 18 0 2 0;
 #X coords 0 -1 1 1 195 135 2 50 50;
-#X restore 254 104 pd HalfToneVFX;
+#X restore 250 70 pd HalfToneVFX;
 #N canvas 517 345 437 372 DirectionalBlurVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -323,7 +322,33 @@ http://www.petewarden.com;
 #X connect 6 0 7 0;
 #X connect 7 0 4 0;
 #X coords 0 -1 1 1 125 135 2 50 50;
-#X restore 454 104 pd DirectionalBlurVFX;
+#X restore 450 70 pd DirectionalBlurVFX;
+#X obj 2 476 cnv 15 500 120 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 512 576 s to-output;
+#N canvas 517 511 437 206 BurnVFX 0;
+#X obj 12 6 inlet;
+#X obj 12 79 outlet;
+#X obj 12 41 pix_freeframe ./plugins/BurnVFX;
+#X text 69 77 Not sure what this does. Looks kind of burnt I guess.
+;
+#X text 14 134 Uses the Pete's Plugins freeframe plugin Burn. http://www.petewarden.com
+;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 0 1 1 125 135 0;
+#X restore 108 484 pd BurnVFX;
+#N canvas 517 527 437 190 ExclusionVFX 0;
+#X obj 12 6 inlet;
+#X obj 12 79 outlet;
+#X obj 12 41 pix_freeframe ./plugins/ExclusionVFX;
+#X text 69 77 Tweaks colours over a certain brightness level;
+#X text 14 134 Uses the Pete's Plugins freeframe plugin Exclusion.
+http://www.petewarden.com;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 0 1 1 125 135 0;
+#X restore 8 484 pd ExclusionVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
