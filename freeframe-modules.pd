@@ -1,5 +1,5 @@
-#N canvas 430 25 844 682 10;
-#X obj -2 5 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+#N canvas 428 25 846 692 10;
+#X obj 1 5 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #N canvas 227 244 476 345 gemwin 0;
 #X obj 82 176 gemwin;
@@ -20,12 +20,12 @@
 #X connect 6 1 5 0;
 #X connect 6 1 4 0;
 #X connect 7 0 0 0;
-#X restore 3 44 pd gemwin;
-#X msg 3 22 create;
-#X text -1 1 Create window:;
-#X obj 112 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 6 44 pd gemwin;
+#X msg 6 22 create;
+#X text 2 1 Create window:;
+#X obj 115 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 129 15 enable;
+#X text 132 15 enable;
 #N canvas 311 386 346 237 webcam-src 0;
 #X obj 12 132 pix_video;
 #X msg 97 107 driver 0;
@@ -51,7 +51,7 @@
 #X connect 6 0 4 0;
 #X connect 10 0 0 0;
 #X connect 11 0 0 0;
-#X restore 112 36 pd webcam-src;
+#X restore 115 36 pd webcam-src;
 #N canvas 94 307 450 314 radialblurVFX 0;
 #X obj 10 8 inlet;
 #X obj 55 82 vsl 30 80 0 1 0 0 empty empty scale 0 -9 0 8 -262144 -1
@@ -70,10 +70,7 @@
 #X connect 6 0 7 2;
 #X connect 7 0 3 0;
 #X coords 0 -1 1 1 85 135 2 50 50;
-#X restore -2 76 pd radialblurVFX;
-#X obj 722 598 pix_texture;
-#X obj 722 575 r to-output;
-#X obj 722 621 square 4 3;
+#X restore 1 76 pd radialblurVFX;
 #N canvas 367 266 437 372 BloomVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 1 empty empty radius -2 -9 0 8 -262144
@@ -144,7 +141,7 @@ sources a halo.;
 #X connect 21 0 13 0;
 #X connect 23 0 2 0;
 #X coords 0 -1 1 1 295 135 2 50 50;
-#X restore 249 222 pd BloomVFX;
+#X restore 252 222 pd BloomVFX;
 #N canvas 762 358 450 356 BackLightVFX 0;
 #X obj -30 8 inlet;
 #X obj 55 122 vsl 30 80 0 1 0 0 empty empty scale -2 -9 0 8 -262144
@@ -187,7 +184,7 @@ http://www.petewarden.com;
 #X connect 13 0 8 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 150 135 2 50 90;
-#X restore 88 76 pd BackLightVFX;
+#X restore 91 76 pd BackLightVFX;
 #N canvas 367 266 437 372 ChromiumVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty edge_1 -2 -9 0 8 -262144
@@ -248,7 +245,7 @@ of the same name.;
 #X connect 17 0 10 0;
 #X connect 19 0 2 0;
 #X coords 0 -1 1 1 245 135 2 50 50;
-#X restore -2 222 pd ChromiumVFX;
+#X restore 1 222 pd ChromiumVFX;
 #N canvas 517 345 437 372 DirectionalBlurVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -273,10 +270,10 @@ http://www.petewarden.com;
 #X connect 6 0 7 0;
 #X connect 7 0 4 0;
 #X coords 0 -1 1 1 125 135 2 50 50;
-#X restore 358 76 pd DirectionalBlurVFX;
-#X obj 2 526 cnv 15 500 120 empty empty empty 20 12 0 14 -233017 -66577
+#X restore 361 76 pd DirectionalBlurVFX;
+#X obj 2 526 cnv 15 835 120 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 1 652 s to-output;
+#X obj 4 652 s to-output;
 #N canvas 517 511 437 206 BurnVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 79 outlet;
@@ -350,11 +347,11 @@ Similar to a peep hole.;
 #X connect 13 0 3 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 210 135 2 50 50;
-#X restore -2 367 pd FishEyeVFX;
+#X restore 1 367 pd FishEyeVFX;
 #N canvas 650 299 437 372 PosterizeVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty colours -2 -9 0 8 -262144
--1 -1 700 1;
+-1 -1 316 1;
 #X obj 12 279 outlet;
 #X floatatom 57 168 5 0 0 0 - - -;
 #X obj 93 85 bng 15 250 50 0 empty empty default 17 7 0 8 -262144 -1
@@ -374,14 +371,17 @@ http://www.petewarden.com;
 #X connect 5 0 1 0;
 #X connect 7 0 2 0;
 #X coords 0 -1 1 1 105 135 2 50 50;
-#X restore 248 76 pd PosterizeVFX;
-#X text 510 522 You must put the compiled free frame libraries in the
+#X restore 251 76 pd PosterizeVFX;
+#X obj 722 601 pix_texture;
+#X obj 722 578 r to-output;
+#X obj 722 624 square 4 3;
+#X text 510 525 You must put the compiled free frame libraries in the
 plugin directory beneath the patch.;
-#X text 510 614 Uses the Freeframe Pete's Plugins. http://www.petewarden.com
+#X text 510 557 Open the patches for details on how they work.;
+#X text 463 654 Uses the Freeframe Pete's Plugins. http://www.petewarden.com
 ;
-#X text 510 554 Open the patches for details on how they work.;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
-#X connect 8 0 10 0;
-#X connect 9 0 8 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
