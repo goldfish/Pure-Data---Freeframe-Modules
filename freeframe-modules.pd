@@ -745,6 +745,49 @@ scales.;
 #X connect 19 0 15 4;
 #X coords 0 -1 1 1 250 135 2 50 50;
 #X restore 733 76 pd SolarizeVFX;
+#N canvas 742 332 437 372 RefractionVFX 0;
+#X obj 12 6 inlet;
+#X obj 157 83 vsl 30 80 0 1 0 0 empty empty end -2 -9 0 8 -262144 -1
+-1 4598 1;
+#X obj 12 279 outlet;
+#X floatatom 157 168 5 0 0 0 - - -;
+#X obj 157 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.582 256;
+#X obj 107 83 vsl 30 80 0 1 0 0 empty empty start -2 -9 0 8 -262144
+-1 -1 3294 1;
+#X floatatom 107 168 5 0 0 0 - - -;
+#X obj 107 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.417 256;
+#X obj 57 83 vsl 30 80 0.01 1 0 0 empty empty thresh -2 -9 0 8 -262144
+-1 -1 1492 1;
+#X floatatom 57 168 5 0 0 0 - - -;
+#X obj 57 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.197 256;
+#X obj 143 52 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X text 53 50 RefractionVFX;
+#X obj 12 241 pix_freeframe ./plugins/RefractionVFX;
+#X text 69 277 The image is broken down into rectangular cells and
+is magnified or reduced in each of them. There is a magnify toggle
+for the last inlet \, but it didn't do anything for me.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin Refraction.
+http://www.petewarden.com;
+#X connect 0 0 13 0;
+#X connect 1 0 3 0;
+#X connect 3 0 13 3;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 13 2;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 13 1;
+#X connect 10 0 8 0;
+#X connect 11 0 10 0;
+#X connect 11 0 7 0;
+#X connect 11 0 4 0;
+#X connect 13 0 2 0;
+#X coords 0 -1 1 1 160 135 2 50 50;
+#X restore 824 367 pd RefractionVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
