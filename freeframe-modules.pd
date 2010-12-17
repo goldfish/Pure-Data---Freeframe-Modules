@@ -523,6 +523,63 @@ the pixels from that line.;
 #X connect 14 0 1 0;
 #X coords 0 -1 1 1 235 135 2 50 50;
 #X restore 552 222 pd SmearVFX;
+#N canvas 742 332 437 372 TimeWarpVFX 0;
+#X obj 12 6 inlet;
+#X obj 307 83 vsl 30 80 0 1 0 0 empty empty speed -2 -9 0 8 -262144
+-1 -1 316 1;
+#X obj 12 279 outlet;
+#X floatatom 307 168 5 0 0 0 - - -;
+#X obj 307 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.04 256;
+#X obj 12 241 pix_freeframe ./plugins/TimeWarpVFX;
+#X obj 290 196 nbx 1 14 0 3 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 2 256;
+#X obj 315 196 nbx 1 14 0 3 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 3 256;
+#X text 53 50 TimeWarpVFX;
+#X obj 357 83 vsl 30 80 0 1 0 0 empty empty time -2 -9 0 8 -262144
+-1 -1 316 1;
+#X floatatom 357 168 5 0 0 0 - - -;
+#X obj 357 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.04 256;
+#X obj 257 83 vsl 30 80 0 1 0 0 empty empty stutter -2 -9 0 8 -262144
+-1 -1 316 1;
+#X floatatom 257 168 5 0 0 0 - - -;
+#X obj 257 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.04 256;
+#X obj 57 83 vsl 30 80 0 1 0 0 empty empty jog -2 -9 0 8 -262144 -1
+-1 0 1;
+#X floatatom 57 168 5 0 0 0 - - -;
+#X text 320 53 SineSlur;
+#X obj 90 81 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X text 107 80 Polari;
+#X text 107 95 Jog;
+#X text 269 224 i'm not sure which is which but neither one works under
+my build on linux. crashes;
+#X text 69 277 Time Warping effects with about 2 sec buffer. Polari
+plays buffer backwards. Jog allows you to select you position in the
+buffer.;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin TimeWarp. http://www.petewarden.com
+;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 3 0 5 1;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 5;
+#X connect 7 0 5 5;
+#X connect 9 0 10 0;
+#X connect 10 0 5 2;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 5 3;
+#X connect 14 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 5 4;
+#X connect 18 0 5 5;
+#X coords 0 -1 1 1 100 135 2 50 50;
+#X restore 732 76 pd TimeWarpVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
