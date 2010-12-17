@@ -616,6 +616,53 @@ them together.;
 #X connect 6 0 1 0;
 #X coords 0 -1 1 1 85 70 2 50 50;
 #X restore 178 534 pd TimeBlurVFX;
+#N canvas 742 332 437 372 TileVFX 0;
+#X obj 12 6 inlet;
+#X obj 157 83 vsl 30 80 0 1 0 0 empty empty width -2 -9 0 8 -262144
+-1 -1 1580 1;
+#X obj 12 279 outlet;
+#X floatatom 157 168 5 0 0 0 - - -;
+#X obj 157 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.2 256;
+#X obj 207 83 vsl 30 80 0 1 0 0 empty empty height -2 -9 0 8 -262144
+-1 -1 1580 1;
+#X floatatom 207 168 5 0 0 0 - - -;
+#X obj 207 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.2 256;
+#X obj 107 83 vsl 30 80 0 1 0 0 empty empty skew -2 -9 0 8 -262144
+-1 -1 3950 1;
+#X floatatom 107 168 5 0 0 0 - - -;
+#X obj 107 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.5 256;
+#X obj 57 83 vsl 30 80 0 1 0 0 empty empty angle -2 -9 0 8 -262144
+-1 -1 3950 1;
+#X floatatom 57 168 5 0 0 0 - - -;
+#X obj 57 23 nbx 4 14 0 1 0 1 empty empty empty 0 -8 0 10 -262144 -1
+-1 0.5 256;
+#X obj 12 241 pix_freeframe ./plugins/TileVFX;
+#X text 53 50 TileVFX;
+#X obj 172 52 bng 15 250 50 0 empty empty defaults 17 7 0 8 -262144
+-1 -1;
+#X text 69 277 A rectangular part of the image is tiled and mirrored.
+;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin Tile. http://www.petewarden.com
+;
+#X connect 0 0 14 0;
+#X connect 1 0 3 0;
+#X connect 3 0 14 3;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 14 4;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 14 2;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 1;
+#X connect 13 0 11 0;
+#X connect 14 0 2 0;
+#X coords 0 -1 1 1 200 135 2 50 50;
+#X restore 514 367 pd TileVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
