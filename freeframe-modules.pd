@@ -1,5 +1,5 @@
-#N canvas 13 25 1261 692 10;
-#X obj 1 5 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+#N canvas 0 25 1274 692 10;
+#X obj 7 7 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #N canvas 227 244 476 345 gemwin 0;
 #X obj 82 176 gemwin;
@@ -20,12 +20,12 @@
 #X connect 6 1 5 0;
 #X connect 6 1 4 0;
 #X connect 7 0 0 0;
-#X restore 6 44 pd gemwin;
-#X msg 6 22 create;
-#X text 2 1 Create window:;
-#X obj 115 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 12 46 pd gemwin;
+#X msg 12 24 create;
+#X text 8 3 Create window:;
+#X obj 121 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 132 15 enable;
+#X text 138 17 enable;
 #N canvas 311 386 346 237 webcam-src 0;
 #X obj 12 132 pix_video;
 #X msg 97 107 driver 0;
@@ -51,7 +51,7 @@
 #X connect 6 0 4 0;
 #X connect 10 0 0 0;
 #X connect 11 0 0 0;
-#X restore 115 36 pd webcam-src;
+#X restore 121 38 pd webcam-src;
 #N canvas 94 307 450 314 radialblurVFX 0;
 #X obj 10 8 inlet;
 #X obj 55 82 vsl 30 80 0 1 0 0 empty empty scale 0 -9 0 8 -262144 -1
@@ -70,7 +70,7 @@
 #X connect 6 0 7 2;
 #X connect 7 0 3 0;
 #X coords 0 -1 1 1 85 135 2 50 50;
-#X restore 1 76 pd radialblurVFX;
+#X restore 7 81 pd radialblurVFX;
 #N canvas 367 266 437 372 BloomVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 1 empty empty radius -2 -9 0 8 -262144
@@ -141,7 +141,7 @@ sources a halo.;
 #X connect 21 0 13 0;
 #X connect 23 0 2 0;
 #X coords 0 -1 1 1 295 135 2 50 50;
-#X restore 252 222 pd BloomVFX;
+#X restore 7 226 pd BloomVFX;
 #N canvas 762 358 450 356 BackLightVFX 0;
 #X obj -30 8 inlet;
 #X obj 55 122 vsl 30 80 0 1 0 0 empty empty scale -2 -9 0 8 -262144
@@ -184,7 +184,7 @@ http://www.petewarden.com;
 #X connect 13 0 8 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 150 135 2 50 90;
-#X restore 91 76 pd BackLightVFX;
+#X restore 227 371 pd BackLightVFX;
 #N canvas 367 266 437 372 ChromiumVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty edge_1 -2 -9 0 8 -262144
@@ -245,7 +245,7 @@ of the same name.;
 #X connect 17 0 10 0;
 #X connect 19 0 2 0;
 #X coords 0 -1 1 1 245 135 2 50 50;
-#X restore 1 222 pd ChromiumVFX;
+#X restore 762 371 pd ChromiumVFX;
 #N canvas 517 345 437 372 DirectionalBlurVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -270,10 +270,10 @@ http://www.petewarden.com;
 #X connect 6 0 7 0;
 #X connect 7 0 4 0;
 #X coords 0 -1 1 1 125 135 2 50 50;
-#X restore 357 76 pd DirectionalBlurVFX;
-#X obj 2 526 cnv 15 835 120 empty empty empty 20 12 0 14 -233017 -66577
+#X restore 102 81 pd DirectionalBlurVFX;
+#X obj 1 518 cnv 15 675 120 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 4 652 s to-output;
+#X obj 3 644 s to-output;
 #N canvas 517 511 437 206 BurnVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 79 outlet;
@@ -285,7 +285,7 @@ http://www.petewarden.com;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X coords 0 0 1 1 125 135 0;
-#X restore 108 534 pd BurnVFX;
+#X restore 107 526 pd BurnVFX;
 #N canvas 517 527 437 190 ExclusionVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 79 outlet;
@@ -296,7 +296,7 @@ http://www.petewarden.com;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X coords 0 0 1 1 125 135 0;
-#X restore 8 534 pd ExclusionVFX;
+#X restore 7 526 pd ExclusionVFX;
 #N canvas 645 345 437 372 FishEyeVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -347,7 +347,7 @@ Similar to a peep hole.;
 #X connect 13 0 3 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 210 135 2 50 50;
-#X restore 1 367 pd FishEyeVFX;
+#X restore 237 81 pd FishEyeVFX;
 #N canvas 650 299 437 372 PosterizeVFX 0;
 #X obj 12 6 inlet;
 #X obj 57 83 vsl 30 80 0 1 0 0 empty empty colours -2 -9 0 8 -262144
@@ -371,14 +371,14 @@ http://www.petewarden.com;
 #X connect 5 0 1 0;
 #X connect 7 0 2 0;
 #X coords 0 -1 1 1 105 135 2 50 50;
-#X restore 247 76 pd PosterizeVFX;
-#X obj 722 601 pix_texture;
-#X obj 722 578 r to-output;
-#X obj 722 624 square 4 3;
-#X text 510 525 You must put the compiled free frame libraries in the
+#X restore 647 371 pd PosterizeVFX;
+#X obj 351 593 pix_texture;
+#X obj 351 570 r to-output;
+#X obj 351 616 square 4 3;
+#X text 349 517 You must put the compiled free frame libraries in the
 plugin directory beneath the patch.;
-#X text 510 557 Open the patches for details on how they work.;
-#X text 463 654 Uses the Freeframe Pete's Plugins. http://www.petewarden.com
+#X text 349 549 Open the patches for details on how they work.;
+#X text 82 646 Uses the Freeframe Pete's Plugins. http://www.petewarden.com
 ;
 #N canvas 645 332 430 385 HalfToneVFX 0;
 #X obj 12 6 inlet;
@@ -422,7 +422,7 @@ http://www.petewarden.com;
 #X connect 12 0 9 0;
 #X connect 12 0 10 0;
 #X coords 0 -1 1 1 210 135 2 50 50;
-#X restore 216 367 pd HalfToneVFX;
+#X restore 7 371 pd HalfToneVFX;
 #N canvas 645 332 430 385 SlideVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -474,7 +474,7 @@ of each other.;
 #X connect 14 0 12 6;
 #X connect 15 0 14 0;
 #X coords 0 -1 1 1 240 135 2 50 50;
-#X restore 487 76 pd SlideVFX;
+#X restore 736 68 pd SlideVFX;
 #N canvas 645 332 430 385 SmearVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -522,7 +522,7 @@ the pixels from that line.;
 #X connect 13 0 12 0;
 #X connect 14 0 1 0;
 #X coords 0 -1 1 1 235 135 2 50 50;
-#X restore 552 222 pd SmearVFX;
+#X restore 986 517 pd SmearVFX;
 #N canvas 742 332 437 372 TimeWarpVFX 0;
 #X obj 12 6 inlet;
 #X obj 307 83 vsl 30 80 0 1 0 0 empty empty speed -2 -9 0 8 -262144
@@ -579,7 +579,7 @@ buffer.;
 #X connect 16 0 5 4;
 #X connect 18 0 5 5;
 #X coords 0 -1 1 1 100 135 2 50 50;
-#X restore 792 222 pd TimeWarpVFX;
+#X restore 681 517 pd TimeWarpVFX;
 #N canvas 742 332 437 372 TimeBlurVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -597,7 +597,7 @@ them together.;
 #X connect 3 0 5 1;
 #X connect 5 0 1 0;
 #X coords 0 -1 1 1 75 135 2 50 50;
-#X restore 433 367 pd TimeBlurVFX;
+#X restore 791 517 pd TimeBlurVFX;
 #N canvas 742 332 437 372 TimeBlurVFX 0;
 #X obj 12 279 outlet;
 #X obj 12 211 pix_freeframe ./plugins/StaticVFX;
@@ -615,7 +615,7 @@ them together.;
 #X connect 3 0 1 2;
 #X connect 6 0 1 0;
 #X coords 0 -1 1 1 85 70 2 50 50;
-#X restore 178 534 pd TimeBlurVFX;
+#X restore 177 526 pd TimeBlurVFX;
 #N canvas 742 332 437 372 TileVFX 0;
 #X obj 12 6 inlet;
 #X obj 157 83 vsl 30 80 0 1 0 0 empty empty width -2 -9 0 8 -262144
@@ -662,7 +662,7 @@ them together.;
 #X connect 13 0 11 0;
 #X connect 14 0 2 0;
 #X coords 0 -1 1 1 200 135 2 50 50;
-#X restore 514 367 pd TileVFX;
+#X restore 460 81 pd TileVFX;
 #N canvas 742 332 437 372 SquashVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 279 outlet;
@@ -681,7 +681,7 @@ it across the output.;
 #X connect 3 0 5 1;
 #X connect 5 0 1 0;
 #X coords 0 -1 1 1 100 135 2 50 50;
-#X restore 897 222 pd SquashVFX;
+#X restore 876 517 pd SquashVFX;
 #N canvas 742 332 437 372 SolarizeVFX 0;
 #X obj 12 6 inlet;
 #X obj 157 83 vsl 30 80 0 1 0 0 empty empty end -2 -9 0 8 -262144 -1
@@ -744,7 +744,7 @@ scales.;
 #X connect 18 0 16 0;
 #X connect 19 0 15 4;
 #X coords 0 -1 1 1 250 135 2 50 50;
-#X restore 732 76 pd SolarizeVFX;
+#X restore 387 371 pd SolarizeVFX;
 #N canvas 742 332 437 372 RefractionVFX 0;
 #X obj 12 6 inlet;
 #X obj 157 83 vsl 30 80 0 1 0 0 empty empty end -2 -9 0 8 -262144 -1
@@ -787,7 +787,7 @@ http://www.petewarden.com;
 #X connect 11 0 4 0;
 #X connect 13 0 2 0;
 #X coords 0 -1 1 1 160 135 2 50 50;
-#X restore 987 76 pd RefractionVFX;
+#X restore 986 68 pd RefractionVFX;
 #N canvas 742 332 437 372 RectDistortVFX 0;
 #X obj 12 6 inlet;
 #X obj 157 83 vsl 30 80 0 1 0 0 empty empty height -2 -9 0 8 -262144
@@ -862,7 +862,7 @@ http://www.petewarden.com;
 #X connect 23 0 13 8;
 #X connect 24 0 22 0;
 #X coords 0 -1 1 1 300 135 2 50 50;
-#X restore 719 367 pd RectDistortVFX;
+#X restore 312 227 pd RectDistortVFX;
 #N canvas 742 332 437 262 DilateVFX 0;
 #X obj 12 6 inlet;
 #X obj 12 169 outlet;
@@ -878,7 +878,7 @@ mode it spreads the darkest pixels.;
 #X connect 2 0 3 1;
 #X connect 3 0 1 0;
 #X coords 0 -1 1 1 65 38 2 50 50;
-#X restore 270 534 pd DilateVFX;
+#X restore 269 526 pd DilateVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
