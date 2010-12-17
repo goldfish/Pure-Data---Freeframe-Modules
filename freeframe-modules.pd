@@ -598,6 +598,24 @@ them together.;
 #X connect 5 0 1 0;
 #X coords 0 -1 1 1 75 135 2 50 50;
 #X restore 433 367 pd TimeBlurVFX;
+#N canvas 742 332 437 372 TimeBlurVFX 0;
+#X obj 12 279 outlet;
+#X obj 12 211 pix_freeframe ./plugins/StaticVFX;
+#X obj 55 75 tgl 15 0 empty empty grey_scale 17 7 0 8 -262144 -1 -1
+0 1;
+#X obj 55 95 tgl 15 0 empty empty two_tone 17 7 0 8 -262144 -1 -1 0
+1;
+#X text 53 50 StaticVFX;
+#X text 69 277 Static Effect.;
+#X obj 12 6 inlet;
+#X text 14 334 Uses the Pete's Plugins freeframe plugin Static. http://www.petewarden.com
+;
+#X connect 1 0 0 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 2;
+#X connect 6 0 1 0;
+#X coords 0 -1 1 1 85 70 2 50 50;
+#X restore 178 534 pd TimeBlurVFX;
 #X connect 1 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
