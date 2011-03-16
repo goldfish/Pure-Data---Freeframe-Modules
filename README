@@ -3,17 +3,22 @@ written by goldfish
 
 Pure Data patches for interfacing to FreeFrame.
 This patch uses the Pete Warden's Petes Plugins for FreeFrame
+
 You can find it here : http://petewarden.com/
+Linux version http://www.mndl.hu/freeframe/petespluginslinux
+
+Compiled plugins go into a directory called /plugins
+This directory should in same directory as freeframe-modules.pd
 
 * Copyright (c) 2010,2011 goldfish
 * All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are met:
-*     * Redistributions of unmodified source code must retain the above copyright
-*       notice, this list of conditions and the following disclaimer.
-*     * The names of its contributors may not be used to endorse or promote products
-*       derived from this software without specific prior written permission.
+* * Redistributions of unmodified source code must retain the above copyright
+* notice, this list of conditions and the following disclaimer.
+* * The names of its contributors may not be used to endorse or promote products
+* derived from this software without specific prior written permission.
 *
 * THIS SOFTWARE IS PROVIDED BY goldfish ''AS IS'' AND ANY
 * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -25,3 +30,5 @@ You can find it here : http://petewarden.com/
 * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
